@@ -1,5 +1,6 @@
 export const getPokemonList = async (offset = 0) => {
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=15\`?offset=${offset}`;
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=15&offset=${offset}`;
+  console.log(url);
   const response = await fetch(url);
   if (!response.ok) throw new Error('Error fetching Pokemon list');
   const data = await response.json();

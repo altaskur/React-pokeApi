@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb',
+  extends: ['airbnb', 'plugin:react-hooks/recommended'],
   overrides: [
     {
       env: {
@@ -22,5 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    // exhaustive-deps
+
   },
 };

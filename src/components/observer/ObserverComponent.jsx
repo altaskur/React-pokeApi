@@ -8,6 +8,7 @@ function ObserverComponent({ executeCallback, use, set }) {
       entries.forEach((entry) => {
         const { isIntersecting } = entry;
         if (isIntersecting) {
+          console.log('isIntersecting', isIntersecting);
           executeCallback(use, set);
         }
       });
