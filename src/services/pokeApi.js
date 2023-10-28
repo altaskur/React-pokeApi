@@ -1,10 +1,9 @@
-export const getPokemonList = async () => {
-  const url = 'https://pokeapi.co/api/v2/pokemon?limit=15';
+export const getPokemonList = async (offset = 0) => {
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=15\`?offset=${offset}`;
   const response = await fetch(url);
   if (!response.ok) throw new Error('Error fetching Pokemon list');
   const data = await response.json();
   if (!data) throw new Error('Error fetching Pokemon list');
-  console.log(data);
   return data.results;
 };
 
@@ -16,8 +15,8 @@ export const getPokemon = async (url) => {
   return data;
 };
 
-export const getFullPokemon = async () => {
-  const pokeList = await getPokemonList();
+export const getFullPokemon = async (offset = 0) => {
+  const pokeList = await getPokemonList(offset);
   // map es sincrono, por lo que no podemos usarlo para hacer fetch de los datos
   const promiseList = pokeList.map(async (pokemon) => getPokemon(pokemon.url));
   // Ahora resolvemos todas las promesas con Promise.all by Manz.dev

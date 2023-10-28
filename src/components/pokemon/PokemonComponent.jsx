@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
 
 function PokemonComponent({ pokemon }) {
   if (pokemon.name) {
@@ -14,6 +16,6 @@ function PokemonComponent({ pokemon }) {
       </section>
     );
   }
+  return null;
 }
-
 export default PokemonComponent;

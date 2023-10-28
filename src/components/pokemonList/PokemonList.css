@@ -1,0 +1,9 @@
+ul{
+    padding:0;
+}
+
+div.monitor{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+}
