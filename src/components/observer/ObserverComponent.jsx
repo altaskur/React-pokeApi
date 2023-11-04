@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import './observerComponent.css';
 
 function ObserverComponent({ executeCallback, use, set }) {
   const monitorRef = useRef(null);
@@ -31,7 +32,7 @@ function ObserverComponent({ executeCallback, use, set }) {
   }, [executeCallback, use, set]);
 
   return (
-    <div className="monitor" ref={monitorRef} />
+    <li className="monitor" ref={monitorRef} />
   );
 }
 

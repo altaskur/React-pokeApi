@@ -5,7 +5,7 @@ import React from 'react';
 function PokemonComponent({ pokemon }) {
   if (pokemon.name) {
     return (
-      <section>
+      <li>
         <p>{pokemon.name}</p>
         <img
           src={pokemon.sprites?.front_default}
@@ -13,7 +13,7 @@ function PokemonComponent({ pokemon }) {
           width="96px"
           height="96px"
         />
-      </section>
+      </li>
     );
   }
   return null;
